@@ -3,7 +3,7 @@
 ## Category: |cff0cd29fEllesmere|rUI
 ## Group: EllesmereUI
 ## Notes: Arms Warrior: Sweeping Strikes charges as a resource bar (standalone plugin, does not modify EllesmereUI files). Type /euiss for options.
-## Author: EllesmereUI plugin
+## Author: Finghin
 ## Version: 1.0.1
 ## Dependencies: EllesmereUI
 ## OptionalDeps: EllesmereUIResourceBars
