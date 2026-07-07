@@ -1,0 +1,39 @@
+# Packages the addon on every version tag (v1.0.1, v1.2.0, ...):
+# wraps the repo content in an EllesmereUISweepingStrikes/ folder, zips it,
+# and attaches the zip to the GitHub release -- so users can extract it
+# straight into Interface/AddOns.
+name: Package addon
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+env:
+  ADDON_NAME: EllesmereUISweepingStrikes
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build zip with addon folder inside
+        run: |
+          mkdir -p "dist/$ADDON_NAME"
+          rsync -a \
+            --exclude '.git*' \
+            --exclude 'dist' \
+            --exclude '*.md' \
+            ./ "dist/$ADDON_NAME/"
+          cd dist
+          zip -r "$ADDON_NAME-${GITHUB_REF_NAME}.zip" "$ADDON_NAME"
+
+      - name: Create release and attach zip
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.zip
+          generate_release_notes: true
