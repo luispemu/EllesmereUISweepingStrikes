@@ -1,0 +1,13 @@
+## Interface: 120000, 120001, 120005, 120007
+## Title: |cff0cd29fEllesmereUI|r Sweeping Strikes
+## Category: |cff0cd29fEllesmere|rUI
+## Group: EllesmereUI
+## Notes: Arms Warrior: Sweeping Strikes charges as a resource bar (standalone plugin, does not modify EllesmereUI files). Type /euiss for options.
+## Author: EllesmereUI plugin
+## Version: 1.0.1
+## Dependencies: EllesmereUI
+## OptionalDeps: EllesmereUIResourceBars
+## SavedVariables: EllesmereUISweepingStrikesDB
+## IconTexture: Interface\AddOns\EllesmereUI\media\eg-logo.tga
+
+EllesmereUISweepingStrikes.lua
